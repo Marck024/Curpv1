@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Curpv1</string>
+
+    <string-array name="Genero">
+        <item>Genero:</item>
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
+    <string-array name="vocales">
+        <item>A</item>
+        <item>E</item>
+        <item>I</item>
+        <item>O</item>
+        <item>U</item>
+    </string-array>
+
+    <string-array name="Estados">
+        <item>Nacimiento:</item>
+        <item>AGUASCALIENTES</item>
+        <item>BAJA CALIFORNIA</item>
+        <item>BAJA CALIFORNIA SUR</item>
+        <item>CAMPECHE</item>
+        <item>CHIAPAS</item>
+        <item>CHIHUAHUA</item>
+        <item>COAHUILA</item>
+        <item>COLIMA</item>
+        <item>DISTRITO FEDERAL</item>
+        <item>DURANGO</item>
+        <item>GUANAJUATO</item>
+        <item>GUERRERO</item>
+        <item>HIDALGO</item>
+        <item>JALISCO</item>
+        <item>MEXICO</item>
+        <item>MICHOACAN</item>
+        <item>MORELOS</item>
+        <item>NAYARIT</item>
+        <item>NUEVO LEON</item>
+        <item>OAXACA</item>
+        <item>PUEBLA</item>
+        <item>QUERETARO</item>
+        <item>QUINTANA ROO</item>
+        <item>SAN LUIS POTOSI</item>
+        <item>SINALOA</item>
+        <item>SONORA</item>
+        <item>TABASCO</item>
+        <item>TAMAULIPAS</item>
+        <item>TLAXCALA</item>
+        <item>VERACRUZ</item>
+        <item>YUCATÁN</item>
+        <item>ZACATECAS</item>
+    </string-array>
+
+    <string-array name="estados">
+        <item>-1</item>
+        <item>AS</item>
+        <item>BC</item>
+        <item>BS</item>
+        <item>CC</item>
+        <item>CS</item>
+        <item>CH</item>
+        <item>CL</item>
+        <item>CM</item>
+        <item>DF</item>
+        <item>DG</item>
+        <item>GT</item>
+        <item>GR</item>
+        <item>HG</item>
+        <item>JC</item>
+        <item>MC</item>
+        <item>MN</item>
+        <item>MS</item>
+        <item>NT</item>
+        <item>NL</item>
+        <item>OC</item>
+        <item>PL</item>
+        <item>QT</item>
+        <item>QR</item>
+        <item>SP</item>
+        <item>SL</item>
+        <item>SR</item>
+        <item>TC</item>
+        <item>TS</item>
+        <item>TL</item>
+        <item>VZ</item>
+        <item>YN</item>
+        <item>ZS</item>
+    </string-array>
+</resources>
