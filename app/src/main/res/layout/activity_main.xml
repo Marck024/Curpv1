@@ -22,21 +22,23 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/apeP"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
                 android:hint="Apellido Paterno"
-                android:layout_width="160dp" />
+                android:inputType="textPersonName"
+                android:text="pardo" />
 
             <EditText
+                android:id="@+id/fecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:layout_weight="1"
                 android:ems="10"
-                android:id="@+id/fecha"
                 android:hint="fecha"
-                android:layout_weight="1" />
+                android:inputType="date"
+                android:text="21/05/92" />
 
         </LinearLayout>
 
@@ -46,12 +48,13 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/apeM"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
                 android:hint="Apellido Materno"
-                android:layout_width="160dp" />
+                android:inputType="textPersonName"
+                android:text="huerta" />
 
             <Spinner
                 android:layout_width="match_parent"
@@ -67,13 +70,14 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/nom"
-                android:hint="Nombres"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.00"
-                android:layout_width="160dp" />
+                android:ems="10"
+                android:hint="Nombres"
+                android:inputType="textPersonName"
+                android:text="marco antonio" />
 
             <Spinner
                 android:layout_width="match_parent"

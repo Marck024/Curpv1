@@ -7,12 +7,21 @@
         <item>Mujer</item>
     </string-array>
 
-    <string-array name="vocales">
-        <item>A</item>
-        <item>E</item>
-        <item>I</item>
-        <item>O</item>
-        <item>U</item>
+    <string-array name="groserias">
+        <item>PENE</item>
+        <item>PEPA</item>
+        <item>PUTO</item>
+        <item>PUTA</item>
+        <item>CULO</item>
+        <item>CACA</item>
+        <item>NACO</item>
+        <item>NACA</item>
+        <item>PITO</item>
+        <item>MOCO</item>
+        <item>RATA</item>
+        <item>VACA</item>
+        <item>MONO</item>
+        <item>GATO</item>
     </string-array>
 
     <string-array name="Estados">
