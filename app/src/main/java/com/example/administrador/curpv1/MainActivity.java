@@ -1,15 +1,26 @@
 package com.example.administrador.curpv1;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Formatter;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView ver;
     //fecha
     private DatePickerDialog dpfecha;
+    private Calendar cal;
+    private int aa,mm,dd;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +58,30 @@ public class MainActivity extends AppCompatActivity {
             spEstados.setAdapter(ad2);
         //fecha
             fecha=(EditText)findViewById(R.id.fecha);
-            //datepicker
+            fecha.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                        showDialog(999);
+                    }
+                }
+            });
+            fecha.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(fecha.hasFocus()){
+                        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                        showDialog(999);
+                    }
+                }
+            });
+            cal=Calendar.getInstance();
+            aa=cal.get(Calendar.YEAR);
+            mm=cal.get(Calendar.MONTH);
+            dd=cal.get(Calendar.DAY_OF_MONTH);
+            mostrarFecha(aa,mm+1,dd);
+
 
         //boton
             btn=(Button)findViewById(R.id.button);
@@ -58,6 +95,28 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        // TODO Auto-generated method stub
+        if (id == 999) {
+            return new DatePickerDialog(this,
+                    myDateListener, aa,mm,dd);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener myDateListener = new
+            DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker arg0,
+                                      int aa, int mm, int dd) {
+                    mostrarFecha(aa,mm+1,dd);
+                }
+            };
+    private void mostrarFecha(int aa, int mm, int dd) {
+        fecha.setText(new StringBuilder().append(new Formatter().format("%02d",dd)).append("/").append(new Formatter().format("%02d",mm)).append("/").append(new Formatter().format("%04d",aa)));
     }
 
     private String hacerCurp() {
@@ -125,19 +184,8 @@ public class MainActivity extends AppCompatActivity {
         }
         //fecha
         palabra=fecha.getText().toString();
-        if(palabra.isEmpty()){
-            fecha.setError("Ingrese una fecha");
-            return "";
-        }else{
-            int res=fechaValida(palabra);
-            if(res!=0){
-                fecha.setError("Ingrese una fecha Valida");
-                return "";
-            }else{
-                fecha.setError(null);
-                curp=curp+palabra.substring(6,8)+palabra.substring(3,5)+palabra.substring(0,2);
-            }
-        }
+        curp=curp+palabra.substring(8,10)+palabra.substring(3,5)+palabra.substring(0,2);
+
 
         //genero
         if(spGenero.getSelectedItem().toString().equals("Genero:")){
@@ -260,33 +308,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String consonantes(String s) {
-        int a,b;
-        String regresa="";
-        for(b=2;b<=s.length();b++){
-            a=b-1;
-            if( !s.substring(a,b).equals("A") &&
-                !s.substring(a,b).equals("E") &&
-                !s.substring(a,b).equals("I") &&
-                !s.substring(a,b).equals("O") &&
-                !s.substring(a,b).equals("U")
-                ) {
-                regresa=s.substring(a,b);
-                    if(regresa.equals("Ñ")){
-                        regresa="X";
-                    }
-                return regresa;
+        int a, b;
+        String regresa = "";
+        for (b = 2; b <= s.length(); b++) {
+            a = b - 1;
+            if (!s.substring(a, b).equals("A") &&
+                    !s.substring(a, b).equals("E") &&
+                    !s.substring(a, b).equals("I") &&
+                    !s.substring(a, b).equals("O") &&
+                    !s.substring(a, b).equals("U")
+                    ) {
+                regresa = s.substring(a, b);
+                if (regresa.equals("Ñ")) {
+                    regresa = "X";
                 }
+                return regresa;
             }
-
-            return regresa;
         }
 
-    private int fechaValida(String s) {
-        int dd=0,mm=0, yy=0, res=0;
-
-        return res;
+        return regresa;
     }
-
-
-
 }

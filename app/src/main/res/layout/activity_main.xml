@@ -27,8 +27,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Apellido Paterno"
-                android:inputType="textPersonName"
-                android:text="pardo" />
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/fecha"
@@ -37,8 +36,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="fecha"
-                android:inputType="date"
-                android:text="21/05/92" />
+                android:inputType="date" />
 
         </LinearLayout>
 
@@ -53,8 +51,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Apellido Materno"
-                android:inputType="textPersonName"
-                android:text="huerta" />
+                android:inputType="textPersonName" />
 
             <Spinner
                 android:layout_width="match_parent"
@@ -76,8 +73,7 @@
                 android:layout_weight="0.00"
                 android:ems="10"
                 android:hint="Nombres"
-                android:inputType="textPersonName"
-                android:text="marco antonio" />
+                android:inputType="textPersonName" />
 
             <Spinner
                 android:layout_width="match_parent"
@@ -94,10 +90,10 @@
             android:layout_weight="0.18" />
 
         <TextView
-            android:text="Curp: "
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="208dp"
-            android:id="@+id/textView"
+            android:text="Calculo de curp para personas que nacieron antes del 2000: "
             android:textAlignment="center"
             android:textSize="24sp" />
 
